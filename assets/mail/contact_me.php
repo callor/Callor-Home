@@ -10,6 +10,12 @@
 //    return false;
 //    }
    
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+
+
+
 $name = "홍길동"; //strip_tags(htmlspecialchars($_POST['name']));
 $email_address = "callor88@naver.com"; // strip_tags(htmlspecialchars($_POST['email']));
 $phone = "0101010101" ; // strip_tags(htmlspecialchars($_POST['phone']));
