@@ -29,10 +29,6 @@ $headers = "From:callor@callor.com\n"; // This is the email address the generate
 $headers .= "Reply-To: $email_address";   
 
 $result = mail($to,$email_subject,$email_body,$headers,"-fcallor@callor.com");
-if($result == true) {
-   echo "OK" ;
-} else {
-   echo "FAIL";
-};
+echo $result;
 // return true;         
 ?>
