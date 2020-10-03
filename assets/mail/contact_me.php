@@ -2,15 +2,15 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 // Check for empty fields
-// if(empty($_POST['name'])      ||
-//    empty($_POST['email'])     ||
-//    empty($_POST['phone'])     ||
-//    empty($_POST['message'])   ||
-//    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
-//    {
-//    echo "No arguments Provided!";
-//    return false;
-//    }
+if(empty($_POST['name'])      ||
+   empty($_POST['email'])     ||
+   empty($_POST['phone'])     ||
+   empty($_POST['message'])   ||
+   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+   {
+   echo "No arguments Provided!";
+   return false;
+   }
    
 
 
@@ -30,8 +30,8 @@ $email_body = "현재 시간 : ". date("H:i:s")."<br/>"; // "You have received a
 // $headers .= "Reply-To: $email_address";   
 
 $headers = implode("\r\n", [
-   'From: webmaster <callor@callor.com>',
-   'Reply-To: callor@callor.com',
+   'From: webmaster <callor@callor.com> ',
+   'Reply-To: callor@callor.com ',
    'X-Mailer: PHP/' . PHP_VERSION
 ]);
 
