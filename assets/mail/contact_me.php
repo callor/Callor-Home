@@ -29,7 +29,7 @@ $email_body = "You have received a new message from your website contact form.\n
 $headers = "From:callor@callor.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";   
 
-$result = mail($to,$email_subject,$email_body,$headers,"-fcallor@callor.com");
+$result = mail($to,$email_subject,$email_body); //,$headers,"-fcallor@callor.com");
 echo $result;
 // return true;         
 ?>
