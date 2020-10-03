@@ -27,7 +27,7 @@ $to = 'callor88@naver.com'; // Add your email address in between the '' replacin
 $email_subject = "Website Contact Form:  $name";
 $email_body = "현재 시간 : ". date("H:i:s")."<br/>"; // "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
 $headers = "From: webmaster <callor@callor.com>\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$headers = "Return-Path: <callor@callor.com>\n";
+$headers .= "Return-Path: <callor@callor.com>\n";
 $headers .= "Reply-To: $email_address";   
 
 $result = mail($to,$email_subject,$email_body,$headers);// ,"-fcallor@callor.com");
