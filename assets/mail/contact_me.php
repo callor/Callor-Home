@@ -31,6 +31,6 @@ $headers .= "Return-Path: <callor@callor.com>\n";
 $headers .= "Reply-To: $email_address";   
 
 $result = mail($to,$email_subject,$email_body,$headers);// ,"-fcallor@callor.com");
-echo $result;
+echo $headers . $result;
 // return true;         
 ?>
