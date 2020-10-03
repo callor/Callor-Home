@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 // Check for empty fields
 // if(empty($_POST['name'])      ||
 //    empty($_POST['email'])     ||
@@ -10,8 +12,7 @@
 //    return false;
 //    }
    
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+
 
 
 
