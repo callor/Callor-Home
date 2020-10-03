@@ -30,7 +30,8 @@ $(function () {
           message: message,
         },
         cache: false,
-        success: function () {
+        success: function (result) {
+          alert(JSON.stringify(result));
           // Success message
           $("#success").html("<div class='alert alert-success'>");
           $("#success > .alert-success")
