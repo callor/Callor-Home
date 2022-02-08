@@ -1,7 +1,5 @@
 $(function () {
-  $(
-    "#contactForm input,#contactForm textarea,#contactForm button"
-  ).jqBootstrapValidation({
+  $("#contactForm input,#contactForm textarea,#contactForm button").jqBootstrapValidation({
     preventSubmit: true,
     submitError: function ($form, event, errors) {
       // additional error messages or events
@@ -33,14 +31,8 @@ $(function () {
         success: function (result) {
           // Success message
           $("#success").html("<div class='alert alert-success'>");
-          $("#success > .alert-success")
-            .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
-            )
-            .append("</button>");
-          $("#success > .alert-success").append(
-            "<strong>메시지를 정상적으로 전송하였습니다</strong>"
-          );
+          $("#success > .alert-success").html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
+          $("#success > .alert-success").append("<strong>메시지를 정상적으로 전송하였습니다. Message Send OK!!</strong>");
           $("#success > .alert-success").append("</div>");
           //clear all fields
           $("#contactForm").trigger("reset");
@@ -48,18 +40,8 @@ $(function () {
         error: function () {
           // Fail message
           $("#success").html("<div class='alert alert-danger'>");
-          $("#success > .alert-danger")
-            .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
-            )
-            .append("</button>");
-          $("#success > .alert-danger").append(
-            $("<strong>").text(
-              "죄송합니다 " +
-                firstName +
-                "님, 메일서버가 응답하지 않고 있습니다. 잠시후에 다시한번 시도해 주시기 바랍니다!"
-            )
-          );
+          $("#success > .alert-danger").html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
+          $("#success > .alert-danger").append($("<strong>").text("죄송합니다 " + firstName + "님, 메일서버가 응답하지 않고 있습니다. 잠시후에 다시한번 시도해 주시기 바랍니다!"));
           $("#success > .alert-danger").append("</div>");
           //clear all fields
           $("#contactForm").trigger("reset");
