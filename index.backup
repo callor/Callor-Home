@@ -7,7 +7,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-	<?php phpinfo();?>
     <meta name="description" content="Web App Developer, Iot Developer" />
     <meta name="author" content="callor@callor.com" />
     <title>callor.com, Welcome</title>
@@ -34,46 +33,52 @@
       type="text/css"
     />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css?ver=2022-02-08-001" rel="stylesheet" />
+    <link href="css/styles.css?ver=2020-10-08-001" rel="stylesheet" />
   </head>
   <body id="page-top">
     <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-  <div class="container">
-    <button
-      class="navbar-toggler navbar-toggler-right"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarResponsive"
-      aria-controls="navbarResponsive"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      Menu
-      <i class="fas fa-bars ml-1"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav text-uppercase ml-auto">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"
+          ><img src="assets/img/logos/callor_logo7.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio"
+                >Portfolio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- Masthead-->
     <header class="masthead">
       <div class="container">
@@ -612,7 +617,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-4 text-lg-left">
-            Copyright &copy; callor@callor.com 2022
+            Copyright &copy; callor@callor.com 2020
           </div>
           <div class="col-lg-4 my-3 my-lg-0">
             <a class="btn btn-dark btn-social mx-2" href="#!"
@@ -668,7 +673,7 @@
                     maiores repudiandae, nostrum, reiciendis facere nemo!
                   </p>
                   <ul class="list-inline">
-                    <li>Date: Feb 2022</li>
+                    <li>Date: January 2020</li>
                     <li>Client: Threads</li>
                     <li>Category: Illustration</li>
                   </ul>
@@ -722,7 +727,7 @@
                     maiores repudiandae, nostrum, reiciendis facere nemo!
                   </p>
                   <ul class="list-inline">
-                    <li>Date: Feb  2022</li>
+                    <li>Date: January 2020</li>
                     <li>Client: Explore</li>
                     <li>Category: Graphic Design</li>
                   </ul>
@@ -776,7 +781,7 @@
                     maiores repudiandae, nostrum, reiciendis facere nemo!
                   </p>
                   <ul class="list-inline">
-                    <li>Date:  Feb 2022</li>
+                    <li>Date: January 2020</li>
                     <li>Client: Finish</li>
                     <li>Category: Identity</li>
                   </ul>
@@ -830,7 +835,7 @@
                     maiores repudiandae, nostrum, reiciendis facere nemo!
                   </p>
                   <ul class="list-inline">
-                    <li>Date: Feb 2022</li>
+                    <li>Date: January 2020</li>
                     <li>Client: Lines</li>
                     <li>Category: Branding</li>
                   </ul>
@@ -884,7 +889,7 @@
                     maiores repudiandae, nostrum, reiciendis facere nemo!
                   </p>
                   <ul class="list-inline">
-                    <li>Date:  Feb 2022</li>
+                    <li>Date: January 2020</li>
                     <li>Client: Southwest</li>
                     <li>Category: Website Design</li>
                   </ul>
@@ -938,7 +943,7 @@
                     maiores repudiandae, nostrum, reiciendis facere nemo!
                   </p>
                   <ul class="list-inline">
-                    <li>Date: Feb 2022</li>
+                    <li>Date: January 2020</li>
                     <li>Client: Window</li>
                     <li>Category: Photography</li>
                   </ul>

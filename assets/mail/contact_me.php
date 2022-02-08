@@ -24,15 +24,22 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
    
 // Create the email and send the message
 $to = 'callor88@naver.com'; // Add your email address in between the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-$email_subject = "Website Contact Form:  $name";
-$email_body =  "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
+$email_subject = "홈페이지 문의:  $name";
+$email_body = 
+		"<h2 style='color:blue;'>문의내용</h2>".
+		"<p>이름: $name</p>".
+		"<p>Email: $email_address</p>".
+		"<p>연락처: $phone</p>".
+		"<p>메시지 : $message</p>";
 // $headers = "From: webmaster<callor@callor.com>\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 // $headers .= "Reply-To: $email_address";   
 
 $headers = implode("\r\n", [
-   'From: webmaster <callor@callor.com> ',
-   'Reply-To: callor@callor.com ',
-   'X-Mailer: PHP/' . PHP_VERSION
+	'From: webmaster <callor@callor.com> ',
+	'Reply-To: callor@callor.com ',
+	'X-Mailer: PHP/' . PHP_VERSION,
+	'MIME-Version: 1.0',
+	'Content-type: text/html; charset=utf-8'
 ]);
 
 $result = mail($to,$email_subject,$email_body,$headers);

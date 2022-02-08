@@ -31,7 +31,6 @@ $(function () {
         },
         cache: false,
         success: function (result) {
-          alert(JSON.stringify(result));
           // Success message
           $("#success").html("<div class='alert alert-success'>");
           $("#success > .alert-success")
@@ -56,9 +55,9 @@ $(function () {
             .append("</button>");
           $("#success > .alert-danger").append(
             $("<strong>").text(
-              "Sorry " +
+              "죄송합니다 " +
                 firstName +
-                ", it seems that my mail server is not responding. Please try again later!"
+                "님, 메일서버가 응답하지 않고 있습니다. 잠시후에 다시한번 시도해 주시기 바랍니다!"
             )
           );
           $("#success > .alert-danger").append("</div>");
