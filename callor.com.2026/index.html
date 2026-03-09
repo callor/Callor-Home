@@ -553,8 +553,6 @@
           formData.append("phone", userTel.value);
           formData.append("message", description.value);
 
-          formData.append("type", document.getElementById("cf-type").value);
-
           const response = await fetch("/assets/mail/sendmail_send.php", {
             method: "POST",
             body: formData,
