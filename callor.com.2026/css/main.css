@@ -47,16 +47,17 @@ nav {
   transition: padding 0.3s;
 }
 .logo {
-  /* font-family: var(--fd); */
-  font-weight: 800;
-  font-size: 1.4rem;
-  color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.02em;
+  padding: 0;
+  a {
+    padding: 0;
+  }
+  img {
+    margin: 0;
+  }
 }
-.logo span {
-  color: var(--accent);
-}
+
 .nav-links {
   display: flex;
   gap: 2.2rem;
