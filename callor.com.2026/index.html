@@ -546,16 +546,24 @@
           return;
         }
 
-        const formData = new FormData();
-        formData.append("name", userName);
-        formData.append("email", userEmail);
-        formData.append("phone", userTel);
-        formData.append("message", description);
+        try {
+          const formData = new FormData();
+          formData.append("name", username);
+          formData.append("email", useremail);
+          formData.append("phone", tel);
+          formData.append("message", descript);
 
-        const response = await fetch("/assets/mail/contact_me.php", {
-          method: "POST",
-          body: formData,
-        });
+          const response = await fetch("/assets/mail/contact_me.php", {
+            method: "POST",
+            body: formData,
+          });
+        } catch (err) {
+          console.error("Contact form error:", err);
+          showMsg(
+            "전송 중 오류가 발생했습니다. 직접 callor@callor.com 으로 문의해 주세요.",
+            "error",
+          );
+        }
 
         // const response = await fetch("/assets/mail/contact_me.php", {
         //   method: "POST",
@@ -577,8 +585,18 @@
         //   document.getElementById(id).value = "";
         // });
 
-        alert("문의 메시지가 전송되었습니다!/n 곧 연락드리겠습니다.");
+        showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
       });
+
+      function showMsg(text, type) {
+        const el = document.getElementById("cf-msg");
+        el.textContent = text;
+        el.style.display = "block";
+        el.style.background = type === "success" ? "rgba(90,138,110,.12)" : "rgba(232,93,47,.1)";
+        el.style.border =
+          type === "success" ? "1px solid rgba(90,138,110,.35)" : "1px solid rgba(232,93,47,.35)";
+        el.style.color = type === "success" ? "#2d6b47" : "var(--accent)";
+      }
     </script>
   </body>
 </html>
