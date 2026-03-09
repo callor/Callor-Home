@@ -557,6 +557,7 @@
             method: "POST",
             body: formData,
           });
+          showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
         } catch (err) {
           console.error("Contact form error:", err);
           showMsg(
@@ -576,16 +577,14 @@
         //   }),
         // });
 
-        if (!response.ok) throw new Error(`Server error: ${response.status}`);
-        const result = await response.text();
-        console.log("Server response:", result);
+        // if (!response.ok) throw new Error(`Server error: ${response.status}`);
+        // const result = await response.text();
+        // console.log("Server response:", result);
 
         // 폼 초기화
         // ["cf-name", "cf-email", "cf-tel", "cf-desc"].forEach((id) => {
         //   document.getElementById(id).value = "";
         // });
-
-        showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
       });
 
       function showMsg(text, type) {
