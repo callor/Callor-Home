@@ -451,18 +451,7 @@
             <label>이메일(email)</label
             ><input name="email" type="email" placeholder="your@email.com" />
           </div>
-          <div class="form-group">
-            <label>문의 유형(Question Type)</label>
-            <select name="q-type">
-              <option value="ai-dev">AI 개발 문의 (AI Development)</option>
-              <option value="ai-consulting">AI 컨설팅 (AI Consulting)</option>
-              <option value="education">교육 프로그램 (AI Education)</option>
-              <option value="full-stack">Full Stack 개발 (Full Stack Development)</option>
-              <option value="ui-ux">UI/UX 디자인 (UI/UX Design)</option>
-              <option value="maintenance">시스템 유지보수 (System Maintenance)</option>
-              <option value="other">기타 (Other)</option>
-            </select>
-          </div>
+
           <div class="form-group">
             <label>문의 내용(Description)</label
             ><textarea
@@ -520,7 +509,6 @@
         const userName = document.querySelector("input[name='username']");
         const userEmail = document.querySelector("input[name='email']");
         const userTel = document.querySelector("input[name='tel']");
-        const qType = document.querySelector("select[name='q-type']");
         const description = document.querySelector("textarea[name='description']");
 
         if (!userName.value.trim()) {
