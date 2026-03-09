@@ -49,7 +49,7 @@ $type    = isset($_POST['type'])
            : '일반 문의';
 
 // ── 수신 메일 주소 ────────────────────────────────────
-$to = 'callor88@naver.com';
+$to = 'callor@callor.com';
 
 // ── 제목 (UTF-8 base64 인코딩) ───────────────────────
 $subject = '=?UTF-8?B?' . base64_encode("[callor.com] {$type} - {$name}") . '?=';
