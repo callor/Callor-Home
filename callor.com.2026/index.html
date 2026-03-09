@@ -557,34 +557,15 @@
             method: "POST",
             body: formData,
           });
-          showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
+          // showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
+          alert(`메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!`);
         } catch (err) {
           console.error("Contact form error:", err);
-          showMsg(
-            "전송 중 오류가 발생했습니다. 직접 callor@callor.com 으로 문의해 주세요.",
-            "error",
+          alert(
+            `전송 중 오류가 발생했습니다. 직접 callor@callor.com 으로 문의해 주세요.
+            ${err}`,
           );
         }
-
-        // const response = await fetch("/assets/mail/contact_me.php", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/json" },
-        //   body: JSON.stringify({
-        //     name: userName.value,
-        //     email: userEmail.value,
-        //     phone: userTel.value,
-        //     message: description.value,
-        //   }),
-        // });
-
-        // if (!response.ok) throw new Error(`Server error: ${response.status}`);
-        // const result = await response.text();
-        // console.log("Server response:", result);
-
-        // 폼 초기화
-        // ["cf-name", "cf-email", "cf-tel", "cf-desc"].forEach((id) => {
-        //   document.getElementById(id).value = "";
-        // });
       });
 
       function showMsg(text, type) {
