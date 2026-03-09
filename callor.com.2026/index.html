@@ -505,7 +505,7 @@
       }
 
       const btnSend = document.querySelector(".btn.send");
-      btnSend?.addEventListener("click", () => {
+      btnSend?.addEventListener("click", async () => {
         const userName = document.querySelector("input[name='username']");
         const userEmail = document.querySelector("input[name='email']");
         const userTel = document.querySelector("input[name='tel']");
@@ -545,6 +545,25 @@
           description.select();
           return;
         }
+
+        const response = await fetch("/assets/mail/contact_me.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: userName.value,
+            email: useremail.value,
+            phone: tel.value,
+            message: descript.value,
+          }),
+        });
+
+        if (!response.ok) throw new Error(`Server error: ${response.status}`);
+
+        // 폼 초기화
+        // ["cf-name", "cf-email", "cf-tel", "cf-desc"].forEach((id) => {
+        //   document.getElementById(id).value = "";
+        // });
+
         alert("문의 메시지가 전송되었습니다!/n 곧 연락드리겠습니다.");
       });
     </script>
