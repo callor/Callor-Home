@@ -709,6 +709,23 @@ section {
   line-height: 1.8;
   color: var(--ink-soft);
 }
+
+.contract-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.contract-info-item {
+  font-size: 0.85rem;
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  color: var(--ink);
+  span {
+    color: var(--accent);
+  }
+}
+
 .contact-detail {
   margin-top: 1.4rem;
   display: flex;
@@ -719,14 +736,21 @@ section {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  font-family: var(--fm);
-  font-size: 0.82rem;
+  font-size: 1.2em;
   color: var(--ink);
   text-decoration: none;
   transition: color 0.2s;
 }
 .contact-detail a:hover {
   color: var(--accent);
+}
+
+.contact-space-box {
+  margin-top: 1.8rem;
+  padding: 1.4rem;
+  background: var(--cream);
+  border-radius: 4px;
+  border: 1px solid var(--border);
 }
 .contact-form {
   display: flex;
@@ -744,8 +768,7 @@ section {
   gap: 0.35rem;
 }
 label {
-  font-family: var(--fm);
-  font-size: 0.7rem;
+  font-size: 0.8em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-soft);
