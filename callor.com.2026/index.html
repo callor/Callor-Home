@@ -558,6 +558,8 @@
         });
 
         if (!response.ok) throw new Error(`Server error: ${response.status}`);
+        const result = await response.text();
+        console.log("Server response:", result);
 
         // 폼 초기화
         // ["cf-name", "cf-email", "cf-tel", "cf-desc"].forEach((id) => {
