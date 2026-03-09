@@ -548,10 +548,10 @@
 
         try {
           const formData = new FormData();
-          formData.append("name", username);
-          formData.append("email", useremail);
-          formData.append("phone", tel);
-          formData.append("message", descript);
+          formData.append("name", userName.value);
+          formData.append("email", userEmail.value);
+          formData.append("phone", userTel.value);
+          formData.append("message", description.value);
 
           const response = await fetch("/assets/mail/contact_me.php", {
             method: "POST",
