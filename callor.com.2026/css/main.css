@@ -16,10 +16,10 @@ html {
   --white: #fdfcf9;
   --ink: #1a1612;
   --ink-soft: #3d3530;
-  --accent: #e85d2f;
+  --accent: #a32c04;
   --border: rgba(26, 22, 18, 0.12);
   --fd: "JetBrains Mono", Georgia, serif;
-  /* --fb: "Noto Sans KR", "Malgun Gothic", sans-serif; */
+  --fb: "Noto Sans KR", "Malgun Gothic", sans-serif;
   --fm: "JetBrains Mono", "Courier New", monospace;
 }
 
@@ -142,7 +142,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--fm);
+  /* font-family: var(--fm); */
   font-size: 0.75rem;
   color: var(--accent);
   border: 1px solid var(--accent);
@@ -652,10 +652,11 @@ section {
   margin-bottom: 0.25rem;
 }
 .profile-title-text {
-  font-family: var(--fm);
-  font-size: 0.78rem;
+  /* font-family: var(--fm); */
   color: var(--accent);
-  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 0.2rem;
   margin-bottom: 1.1rem;
 }
 .profile-bio {
