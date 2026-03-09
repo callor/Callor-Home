@@ -11,16 +11,18 @@ if(empty($_POST['name'])      ||
    echo "No arguments Provided!";
    return false;
    }
-   
+  
 
+$data = json_decode(file_get_contents('php://input'), true);
+$name  = $data['name'];
+$email_address = $data['email'];
+$phone       = $data['phone'];
+$message  = $data['message'];
 
-
-
-
-$name = strip_tags(htmlspecialchars($_POST['name']));
-$email_address = strip_tags(htmlspecialchars($_POST['email']));
-$phone = strip_tags(htmlspecialchars($_POST['phone']));
-$message = strip_tags(htmlspecialchars($_POST['message']));
+// $name = strip_tags(htmlspecialchars($_POST['name']));
+// $email_address = strip_tags(htmlspecialchars($_POST['email']));
+// $phone = strip_tags(htmlspecialchars($_POST['phone']));
+// $message = strip_tags(htmlspecialchars($_POST['message']));
    
 // Create the email and send the message
 $to = 'callor88@naver.com'; // Add your email address in between the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
