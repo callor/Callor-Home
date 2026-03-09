@@ -441,36 +441,36 @@
         <div class="contact-form">
           <div class="form-row">
             <div class="form-group">
-              <label>이름(name)</label><input type="text" placeholder="홍길동" />
+              <label>이름(name)</label><input name="username" type="text" placeholder="홍길동" />
             </div>
             <div class="form-group">
-              <label>연락처(tel)</label><input type="tel" placeholder="010-0000-0000" />
+              <label>연락처(tel)</label><input name="tel" type="tel" placeholder="010-0000-0000" />
             </div>
           </div>
           <div class="form-group">
-            <label>이메일(email)</label><input type="email" placeholder="your@email.com" />
+            <label>이메일(email)</label
+            ><input name="email" type="email" placeholder="your@email.com" />
           </div>
           <div class="form-group">
             <label>문의 유형(Question Type)</label>
-            <select>
-              <option>AI 개발 문의 (AI Development)</option>
-              <option>AI 컨설팅 (AI Consulting)</option>
-              <option>교육 프로그램 (AI Education)</option>
-              <option>Full Stack 개발 (Full Stack Development)</option>
-              <option>UI/UX 디자인 (UI/UX Design)</option>
-              <option>시스템 유지보수 (System Maintenance)</option>
-              <option>기타 (Other)</option>
+            <select name="q-type">
+              <option value="ai-dev">AI 개발 문의 (AI Development)</option>
+              <option value="ai-consulting">AI 컨설팅 (AI Consulting)</option>
+              <option value="education">교육 프로그램 (AI Education)</option>
+              <option value="full-stack">Full Stack 개발 (Full Stack Development)</option>
+              <option value="ui-ux">UI/UX 디자인 (UI/UX Design)</option>
+              <option value="maintenance">시스템 유지보수 (System Maintenance)</option>
+              <option value="other">기타 (Other)</option>
             </select>
           </div>
           <div class="form-group">
             <label>문의 내용(Description)</label
-            ><textarea placeholder="프로젝트에 대해 간략히 설명해 주세요..."></textarea>
+            ><textarea
+              name="description"
+              placeholder="문의 사항을 간략히 입력해 주세요..."
+            ></textarea>
           </div>
-          <button
-            class="btn btn-primary"
-            style="justify-content: center"
-            onclick="alert('메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다.')"
-          >
+          <button class="btn btn-primary send" style="justify-content: center">
             메시지 보내기 →
           </button>
         </div>
@@ -514,6 +514,51 @@
           card.classList.toggle("hidden", filter !== "all" && card.dataset.cat !== filter);
         });
       }
+
+      const btnSend = document.querySelector(".btn.send");
+      btnSend?.addEventListener("click", () => {
+        const userName = document.querySelector("input[name='username']");
+        const userEmail = document.querySelector("input[name='email']");
+        const userTel = document.querySelector("input[name='tel']");
+        const qType = document.querySelector("select[name='q-type']");
+        const description = document.querySelector("textarea[name='description']");
+
+        if (!userName.value.trim()) {
+          alert("이름을 입력해 주세요.");
+          userName.select();
+          return;
+        }
+        if (!userTel.value.trim()) {
+          alert("연락 받으실 전화번호를 입력해 주세요.");
+          userTel.select();
+          return;
+        }
+
+        if (userTel.value.trim() && !/^\d{3}-\d{4}-\d{4}$/.test(userTel.value.trim())) {
+          alert("전화번호 형식이 올바르지 않습니다. 예시: 010-0000-0000");
+          userTel.select();
+          return;
+        }
+
+        if (!userEmail.value.trim()) {
+          alert("답변 받으실 이메일을 입력해 주세요.");
+          userEmail.select();
+          return;
+        }
+
+        if (userEmail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail.value.trim())) {
+          alert("이메일 형식이 올바르지 않습니다. 예시: example@domain.com");
+          userEmail.select();
+          return;
+        }
+
+        if (!description.value.trim()) {
+          alert("문의 내용을 입력해 주세요.");
+          description.select();
+          return;
+        }
+        alert("문의 메시지가 전송되었습니다!/n 곧 연락드리겠습니다.");
+      });
     </script>
   </body>
 </html>
