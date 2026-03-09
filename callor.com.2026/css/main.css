@@ -50,6 +50,9 @@ nav {
   text-decoration: none;
   letter-spacing: -0.02em;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   a {
     padding: 0;
   }
