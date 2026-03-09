@@ -546,16 +546,27 @@
           return;
         }
 
+        const formData = new FormData();
+        formData.append("name", userName);
+        formData.append("email", userEmail);
+        formData.append("phone", userTel);
+        formData.append("message", description);
+
         const response = await fetch("/assets/mail/contact_me.php", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: userName.value,
-            email: userEmail.value,
-            phone: userTel.value,
-            message: description.value,
-          }),
+          body: formData,
         });
+
+        // const response = await fetch("/assets/mail/contact_me.php", {
+        //   method: "POST",
+        //   headers: { "Content-Type": "application/json" },
+        //   body: JSON.stringify({
+        //     name: userName.value,
+        //     email: userEmail.value,
+        //     phone: userTel.value,
+        //     message: description.value,
+        //   }),
+        // });
 
         if (!response.ok) throw new Error(`Server error: ${response.status}`);
         const result = await response.text();
