@@ -553,7 +553,7 @@
           formData.append("phone", userTel.value);
           formData.append("message", description.value);
 
-          const response = await fetch("/assets/mail/contact_me.php", {
+          const response = await fetch("/assets/mail/sendmail_send.php", {
             method: "POST",
             body: formData,
           });
