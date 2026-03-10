@@ -116,7 +116,7 @@ $body = "
 // ── qmail 호환 헤더 (\r\n 아닌 \n) ───────────────────
 // $fromName = '=?UTF-8?B?' . base64_encode("{$userName}") . '?=';
 
-$fromName = mb_encode_mimeheader($userName, "UTF-8", "B");
+// $fromName = mb_encode_mimeheader($userName, "UTF-8", "B");
 
 // $headers  = "From: {$fromName} <{$userEmail}>\r\n";
 $headers  = "From: callor.com <callor@callor.com>\r\n";
