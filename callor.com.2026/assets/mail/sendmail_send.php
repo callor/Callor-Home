@@ -41,11 +41,6 @@ if (!empty($errors)) {
     exit;
 }
 
-    //   formData.append("userName", userName.value);
-    //       formData.append("userEmail", userEmail.value);
-    //       formData.append("userTel", userTel.value);
-    //       formData.append("description", description.value);
-
 
 // ── 입력값 sanitize ──────────────────────────────────
 $userName    = strip_tags(htmlspecialchars(trim($_POST['userName']),    ENT_QUOTES, 'UTF-8'));
