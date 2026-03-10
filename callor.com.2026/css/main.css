@@ -914,3 +914,10 @@ footer a:hover {
     text-align: center;
   }
 }
+
+#cf-msg {
+  margin-top: 1rem;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--accent);
+}

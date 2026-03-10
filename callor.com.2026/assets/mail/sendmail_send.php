@@ -103,7 +103,7 @@ $body = "
         <tr>
           <td style='background:#f9f9f9;padding:16px 36px;border-top:1px solid #eee'>
             <p style='margin:0;font-size:11px;color:#aaa'>접수 시각: {$now} &nbsp;|&nbsp; IP: {$ip}</p>
-            <p style='margin:4px 0 0;font-size:11px;color:#aaa'>callor.com &mdash; callor@callor.com</p>
+            <p style='margin:4px 0 0;font-size:11px;color:#aaa'>&copy; callor@callor.com. All rights reserved.</p>
           </td>
         </tr>
       </table>

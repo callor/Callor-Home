@@ -569,18 +569,17 @@
           });
 
           showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
-          // alert(`메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!`);
         } catch (err) {
           console.error("Contact form error:", err);
-          alert(
-            `전송 중 오류가 발생했습니다. 직접 callor@callor.com 으로 문의해 주세요.
-            ${err}`,
+          showMsg(
+            "전송 중 오류가 발생했습니다. 직접 callor@callor.com 으로 문의해 주세요.",
+            `${err}`,
           );
         }
       });
 
       function showMsg(text, type) {
-        const el = document.getElementById("cf-msg");
+        const el = document.querySelector("#cf-msg");
         el.textContent = text;
         el.style.display = "block";
         el.style.background = type === "success" ? "rgba(90,138,110,.12)" : "rgba(232,93,47,.1)";
