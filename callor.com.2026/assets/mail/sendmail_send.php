@@ -50,10 +50,9 @@ $description = strip_tags(htmlspecialchars(trim($_POST['description']), ENT_QUOT
 
 // ── 수신 메일 주소 ────────────────────────────────────
 $to = 'callor@daum.net';
-// $to = 'callor@callor.com';
 
 // ── 제목 (UTF-8 base64 인코딩) ───────────────────────
-$subject = '=?UTF-8?B?' . base64_encode("[callor.com] 홈페이지 문의 - {$userName}") . '?=';
+$subject = '=?UTF-8?B?' . base64_encode("[callor.com] 문의 - {$userName}") . '?=';
 
 // ── HTML 메일 본문 ────────────────────────────────────
 $now  = date('Y-m-d H:i:s');
