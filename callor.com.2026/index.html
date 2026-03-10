@@ -548,10 +548,10 @@
 
         try {
           const formData = new FormData();
-          formData.append("name", userName.value);
-          formData.append("email", userEmail.value);
-          formData.append("phone", userTel.value);
-          formData.append("message", description.value);
+          formData.append("userName", userName.value);
+          formData.append("userEmail", userEmail.value);
+          formData.append("userTel", userTel.value);
+          formData.append("description", description.value);
 
           const response = await fetch("/assets/mail/sendmail_send.php", {
             method: "POST",

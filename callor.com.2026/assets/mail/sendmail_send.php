@@ -20,13 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+
+
 // ── 입력값 검증 ──────────────────────────────────────
 $errors = [];
-if (empty($_POST['name']))    $errors[] = "이름을 입력해 주세요.";
-if (empty($_POST['email']))   $errors[] = "이메일을 입력해 주세요.";
-if (empty($_POST['phone']))   $errors[] = "연락처를 입력해 주세요.";
-if (empty($_POST['message'])) $errors[] = "문의 내용을 입력해 주세요.";
-if (!empty($_POST['email']) && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+if (empty($_POST['userName']))    $errors[] = "이름을 입력해 주세요.";
+if (empty($_POST['useEmail']))   $errors[] = "이메일을 입력해 주세요.";
+if (empty($_POST['userTel']))   $errors[] = "연락처를 입력해 주세요.";
+if (empty($_POST['description'])) $errors[] = "문의 내용을 입력해 주세요.";
+if (!empty($_POST['userEmail']) && !filter_var($_POST['userEmail'], FILTER_VALIDATE_EMAIL)) {
     $errors[] = "올바른 이메일 형식이 아닙니다.";
 }
 
@@ -39,17 +41,23 @@ if (!empty($errors)) {
     exit;
 }
 
+    //   formData.append("userName", userName.value);
+    //       formData.append("userEmail", userEmail.value);
+    //       formData.append("userTel", userTel.value);
+    //       formData.append("description", description.value);
+
+
 // ── 입력값 sanitize ──────────────────────────────────
-$name    = strip_tags(htmlspecialchars(trim($_POST['name']),    ENT_QUOTES, 'UTF-8'));
-$email   = strip_tags(htmlspecialchars(trim($_POST['email']),   ENT_QUOTES, 'UTF-8'));
-$phone   = strip_tags(htmlspecialchars(trim($_POST['phone']),   ENT_QUOTES, 'UTF-8'));
-$message = strip_tags(htmlspecialchars(trim($_POST['message']), ENT_QUOTES, 'UTF-8'));
+$userName    = strip_tags(htmlspecialchars(trim($_POST['userName']),    ENT_QUOTES, 'UTF-8'));
+$userEmail   = strip_tags(htmlspecialchars(trim($_POST['userEmail']),   ENT_QUOTES, 'UTF-8'));
+$userTel   = strip_tags(htmlspecialchars(trim($_POST['userTel']),   ENT_QUOTES, 'UTF-8'));
+$description = strip_tags(htmlspecialchars(trim($_POST['description']), ENT_QUOTES, 'UTF-8'));
 
 // ── 수신 메일 주소 ────────────────────────────────────
 $to = 'callor@callor.com';
 
 // ── 제목 (UTF-8 base64 인코딩) ───────────────────────
-$subject = '=?UTF-8?B?' . base64_encode("[callor.com] 홈페이지 문의 - {$name}") . '?=';
+$subject = '=?UTF-8?B?' . base64_encode("[callor.com] 홈페이지 문의 - {$userName}") . '?=';
 
 // ── HTML 메일 본문 ────────────────────────────────────
 $now  = date('Y-m-d H:i:s');
@@ -85,19 +93,19 @@ $body = "
             <table width='100%' cellpadding='0' cellspacing='0' style='border-collapse:collapse'>
               <tr>
                 <td style='padding:12px 14px;background:#f9f9f9;border:1px solid #e8e8e8;width:90px;font-size:13px;font-weight:bold;color:#555'>이름</td>
-                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'>{$name}</td>
+                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'>{$userNName}</td>
               </tr>
               <tr>
                 <td style='padding:12px 14px;background:#f9f9f9;border:1px solid #e8e8e8;font-size:13px;font-weight:bold;color:#555'>이메일</td>
-                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'><a href='mailto:{$email}' style='color:#E85D2F;text-decoration:none'>{$email}</a></td>
+                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'><a href='mailto:{$userEmail}' style='color:#E85D2F;text-decoration:none'>{$email}</a></td>
               </tr>
               <tr>
                 <td style='padding:12px 14px;background:#f9f9f9;border:1px solid #e8e8e8;font-size:13px;font-weight:bold;color:#555'>연락처</td>
-                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'>{$phone}</td>
+                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'>{$userTel}</td>
               </tr>
               <tr>
                 <td style='padding:12px 14px;background:#f9f9f9;border:1px solid #e8e8e8;font-size:13px;font-weight:bold;color:#555;vertical-align:top'>문의내용</td>
-                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222;line-height:1.7'>{$message}</td>
+                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222;line-height:1.7'>{$description}</td>
               </tr>
             </table>
           </td>
@@ -110,7 +118,6 @@ $body = "
             <p style='margin:4px 0 0;font-size:11px;color:#aaa'>callor.com &mdash; callor@callor.com</p>
           </td>
         </tr>
-
       </table>
     </td></tr>
   </table>
@@ -119,7 +126,7 @@ $body = "
 
 // ── qmail 호환 헤더 (\r\n 아닌 \n) ───────────────────
 $headers  = "From: callor.com <callor@callor.com>\n";
-$headers .= "Reply-To: {$name} <{$email}>\n";
+$headers .= "Reply-To: {$userName} <{$userEmail}>\n";
 $headers .= "MIME-Version: 1.0\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\n";
 $headers .= "Content-Transfer-Encoding: base64\n";
