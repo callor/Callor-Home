@@ -117,16 +117,13 @@ $body = "
 
 $fromName = mb_encode_mimeheader($userName, "UTF-8", "B");
 
-$headers  = "From: {$fromName} <{$userEmail}>\r\n";
-// $headers  = "From: callor.com <callor@callor.com>\n";
+// $headers  = "From: {$fromName} <{$userEmail}>\r\n";
+$headers  = "From: callor.com <callor@callor.com>\n";
 $headers .= "Reply-To: {$userName} <{$userEmail}>\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 $headers .= "Content-Transfer-Encoding: base64\r\n";
 $headers .= "X-Mailer: PHP/" . PHP_VERSION . "\r\n";
-
-
-
 
 // ── 발송 ─────────────────────────────────────────────
 $encoded_body = chunk_split(base64_encode($body));
