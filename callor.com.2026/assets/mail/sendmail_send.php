@@ -119,7 +119,7 @@ $body = "
 $fromName = mb_encode_mimeheader($userName, "UTF-8", "B");
 
 // $headers  = "From: {$fromName} <{$userEmail}>\r\n";
-$headers  = "From: callor.com <callor@callor.com>\n";
+$headers  = "From: callor.com <callor@callor.com>\r\n";
 $headers .= "Reply-To: {$userName} <{$userEmail}>\n";
 $headers .= "MIME-Version: 1.0\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\n";
