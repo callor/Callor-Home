@@ -49,7 +49,8 @@ $userTel   = strip_tags(htmlspecialchars(trim($_POST['userTel']),   ENT_QUOTES, 
 $description = strip_tags(htmlspecialchars(trim($_POST['description']), ENT_QUOTES, 'UTF-8'));
 
 // ── 수신 메일 주소 ────────────────────────────────────
-$to = 'callor@daum.net';
+// $to = 'callor@daum.net';
+$to = 'callor@callor.com';
 
 // ── 제목 (UTF-8 base64 인코딩) ───────────────────────
 $subject = '=?UTF-8?B?' . base64_encode("[callor.com] 홈페이지 문의 - {$userName}") . '?=';
