@@ -459,6 +459,16 @@
               placeholder="문의 사항을 간략히 입력해 주세요..."
             ></textarea>
           </div>
+          <div
+            id="cf-msg"
+            style="
+              display: none;
+              padding: 0.75rem 1rem;
+              border-radius: 3px;
+              font-size: 0.875rem;
+              font-family: var(--fm);
+            "
+          ></div>
           <button class="btn btn-primary send" style="justify-content: center">
             메시지 보내기 →
           </button>
@@ -558,8 +568,8 @@
             body: formData,
           });
 
-          // showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
-          alert(`메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!`);
+          showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
+          // alert(`메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!`);
         } catch (err) {
           console.error("Contact form error:", err);
           alert(
