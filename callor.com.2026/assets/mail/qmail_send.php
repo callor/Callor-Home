@@ -25,7 +25,7 @@ $phone   = strip_tags(htmlspecialchars($_POST['phone']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
 
 // ── 메일 설정 ────────────────────────────────────────
-$to      = 'callor88@naver.com';
+$to      = 'callor@callor.com';
 $subject = '=?UTF-8?B?' . base64_encode("홈페이지 문의: $name") . '?=';
 
 $body =
