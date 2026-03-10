@@ -49,7 +49,8 @@ $userTel   = strip_tags(htmlspecialchars(trim($_POST['userTel']),   ENT_QUOTES, 
 $description = strip_tags(htmlspecialchars(trim($_POST['description']), ENT_QUOTES, 'UTF-8'));
 
 // ── 수신 메일 주소 ────────────────────────────────────
-$to = 'callor@daum.net';
+// $to = 'callor@daum.net';
+$to = 'callor88@naver.com';
 
 // ── 제목 (UTF-8 base64 인코딩) ───────────────────────
 $subject = '=?UTF-8?B?' . base64_encode("[callor.com] 문의 - {$userName}") . '?=';
@@ -117,8 +118,8 @@ $body = "
 
 $fromName = mb_encode_mimeheader($userName, "UTF-8", "B");
 
-// $headers  = "From: {$fromName} <{$userEmail}>\r\n";
-$headers  = "From: callor.com <callor@callor.com>\n";
+$headers  = "From: {$fromName} <{$userEmail}>\r\n";
+// $headers  = "From: callor.com <callor@callor.com>\n";
 $headers .= "Reply-To: {$userName} <{$userEmail}>\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
