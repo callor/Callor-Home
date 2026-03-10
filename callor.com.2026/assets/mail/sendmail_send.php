@@ -120,10 +120,10 @@ $body = "
 </html>";
 
 // ── qmail 호환 헤더 (\r\n 아닌 \n) ───────────────────
-// $fromName = '=?UTF-8?B?' . base64_encode($userName) . '?=';
-// $headers  = "From: {$fromName} <callor@callor.com>\r\n";
+$fromName = '=?UTF-8?B?' . base64_encode($userName) . '?=';
+$headers  = "From: {$fromName} <callor@callor.com>\r\n";
+// $headers  = "From: callor.com <callor@callor.com>\r\n";
 
-$headers  = "From: callor.com <callor@callor.com>\r\n";
 $headers .= "Reply-To: {$userName} <{$userEmail}>\n";
 $headers .= "MIME-Version: 1.0\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\n";
