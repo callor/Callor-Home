@@ -568,6 +568,9 @@
             body: formData,
           });
 
+          const inputs = document.querySelectorAll("input, textarea");
+          inputs.forEach((input) => (input.value = "")); // Clear form fields
+
           showMsg("메시지가 전송되었습니다. 빠른 시간 내 답변드리겠습니다. 감사합니다!", "success");
         } catch (err) {
           console.error("Contact form error:", err);
