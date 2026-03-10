@@ -44,15 +44,12 @@ $name    = strip_tags(htmlspecialchars(trim($_POST['name']),    ENT_QUOTES, 'UTF
 $email   = strip_tags(htmlspecialchars(trim($_POST['email']),   ENT_QUOTES, 'UTF-8'));
 $phone   = strip_tags(htmlspecialchars(trim($_POST['phone']),   ENT_QUOTES, 'UTF-8'));
 $message = strip_tags(htmlspecialchars(trim($_POST['message']), ENT_QUOTES, 'UTF-8'));
-$type    = isset($_POST['type'])
-           ? strip_tags(htmlspecialchars(trim($_POST['type']), ENT_QUOTES, 'UTF-8'))
-           : '일반 문의';
 
 // ── 수신 메일 주소 ────────────────────────────────────
 $to = 'callor@callor.com';
 
 // ── 제목 (UTF-8 base64 인코딩) ───────────────────────
-$subject = '=?UTF-8?B?' . base64_encode("[callor.com] {$type} - {$name}") . '?=';
+$subject = '=?UTF-8?B?' . base64_encode("[callor.com] 홈페이지 문의 - {$name}") . '?=';
 
 // ── HTML 메일 본문 ────────────────────────────────────
 $now  = date('Y-m-d H:i:s');
