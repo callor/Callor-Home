@@ -71,7 +71,7 @@ $body = "
         <tr>
           <td style='background:#E85D2F;padding:28px 36px'>
             <h1 style='margin:0;color:#ffffff;font-size:22px;letter-spacing:-.5px'>callor.com</h1>
-            <p style='margin:6px 0 0;color:rgba(255,255,255,.8);font-size:13px'>홈페이지 문의가 접수되었습니다</p>
+            <p style='margin:6px 0 0;color:rgba(255,255,255,.8);font-size:13px'>홈페이지에서 문의가 접수되었습니다</p>
           </td>
         </tr>
 
