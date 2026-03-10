@@ -113,7 +113,7 @@ $body = "
 </html>";
 
 // ── qmail 호환 헤더 (\r\n 아닌 \n) ───────────────────
-$headers  = "From: callor.com <callor@callor.com>\n";
+$headers  = "From: 내멋으로 <callor@callor.com>\n";
 $headers .= "Reply-To: {$userName} <{$userEmail}>\n";
 $headers .= "MIME-Version: 1.0\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\n";
