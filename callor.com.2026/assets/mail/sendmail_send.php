@@ -56,8 +56,14 @@ $to = 'callor@daum.net';
 $subject = '=?UTF-8?B?' . base64_encode("[callor.com] 문의 - {$userName}") . '?=';
 
 // ── HTML 메일 본문 ────────────────────────────────────
-$now  = date('Y-m-d H:i:s');
+$now = new DateTime("now", new DateTimeZone("Asia/Seoul"));
+// $now  = date('Y-m-d H:i:s');
+$today = $now->format("Y-m-d H:i:s");
 $ip   = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+
+
+
+$today = $now->format("Y-m-d H:i:s");
 
 $body = "
 <!DOCTYPE html>
@@ -103,7 +109,7 @@ $body = "
         <!-- 푸터 -->
         <tr>
           <td style='background:#f9f9f9;padding:16px 36px;border-top:1px solid #eee'>
-            <p style='margin:0;font-size:11px;color:#aaa'>접수 시각: {$now} &nbsp;|&nbsp; IP: {$ip}</p>
+            <p style='margin:0;font-size:11px;color:#aaa'>접수 시각: {$today} &nbsp;|&nbsp; IP: {$ip}</p>
             <p style='margin:4px 0 0;font-size:11px;color:#aaa'>&copy; callor@callor.com. All rights reserved.</p>
           </td>
         </tr>
