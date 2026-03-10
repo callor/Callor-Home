@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // ── 입력값 검증 ──────────────────────────────────────
 $errors = [];
 if (empty($_POST['userName']))    $errors[] = "이름을 입력해 주세요.";
-if (empty($_POST['useEmail']))   $errors[] = "이메일을 입력해 주세요.";
+if (empty($_POST['userEmail']))   $errors[] = "이메일을 입력해 주세요.";
 if (empty($_POST['userTel']))   $errors[] = "연락처를 입력해 주세요.";
 if (empty($_POST['description'])) $errors[] = "문의 내용을 입력해 주세요.";
 if (!empty($_POST['userEmail']) && !filter_var($_POST['userEmail'], FILTER_VALIDATE_EMAIL)) {
