@@ -75,20 +75,13 @@ $body = "
           </td>
         </tr>
 
-        <!-- 문의 유형 배지 -->
-        <tr>
-          <td style='padding:24px 36px 0'>
-            <span style='display:inline-block;background:#fff3ef;color:#E85D2F;border:1px solid #E85D2F;padding:4px 12px;border-radius:2px;font-size:12px;font-family:monospace;letter-spacing:.06em'>{$type}</span>
-          </td>
-        </tr>
-
         <!-- 내용 테이블 -->
         <tr>
           <td style='padding:20px 36px 28px'>
             <table width='100%' cellpadding='0' cellspacing='0' style='border-collapse:collapse'>
               <tr>
                 <td style='padding:12px 14px;background:#f9f9f9;border:1px solid #e8e8e8;width:90px;font-size:13px;font-weight:bold;color:#555'>이름</td>
-                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'>{$userNName}</td>
+                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'>{$userName}</td>
               </tr>
               <tr>
                 <td style='padding:12px 14px;background:#f9f9f9;border:1px solid #e8e8e8;font-size:13px;font-weight:bold;color:#555'>이메일</td>
