@@ -85,7 +85,7 @@ $body = "
               </tr>
               <tr>
                 <td style='padding:12px 14px;background:#f9f9f9;border:1px solid #e8e8e8;font-size:13px;font-weight:bold;color:#555'>이메일</td>
-                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'><a href='mailto:{$userEmail}' style='color:#E85D2F;text-decoration:none'>{$email}</a></td>
+                <td style='padding:12px 14px;border:1px solid #e8e8e8;font-size:14px;color:#222'><a href='mailto:{$userEmail}' style='color:#E85D2F;text-decoration:none'>{$userEmail}</a></td>
               </tr>
               <tr>
                 <td style='padding:12px 14px;background:#f9f9f9;border:1px solid #e8e8e8;font-size:13px;font-weight:bold;color:#555'>연락처</td>
